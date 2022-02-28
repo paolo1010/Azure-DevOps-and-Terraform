@@ -7,6 +7,16 @@ terraform {
   }
 }
 
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "tf_rg_blogstorage"
+    storage_account_name = "tfstorageagbonnon10"
+    container_name       = "tfstate"
+    key                  = "terraform.tfstate"
+  }
+}
+
+
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
   features {}
